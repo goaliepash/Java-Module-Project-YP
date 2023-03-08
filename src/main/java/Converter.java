@@ -3,7 +3,8 @@ import java.util.Locale;
 public class Converter {
 
     public static String getConvertAmount(double amount) {
-        if (amount >= 10 && amount <= 20) {
+        int integerDivisionBy100Remainder = (int) amount % 100;
+        if (integerDivisionBy100Remainder >= 11 && integerDivisionBy100Remainder <= 19) {
             return String.format(Locale.US, "%.2f рублей", amount);
         }
         int integerDivisionBy10Remainder = (int) amount % 10;
